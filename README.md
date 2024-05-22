@@ -30,14 +30,3 @@ Follow these instructions to get a copy of the project up and running on your lo
    git clone https://github.com/your-username/nft-collectible-animated.git
    cd nft-collectible-animated
    ```
-
-nft-collectible-animated/
-├── public/ # Static assets
-├── src/
-│ ├── components/ # Reusable components
-│ ├── pages/ # Next.js pages
-│ ├── styles/ # Global styles and Tailwind configuration
-│ ├── utils/ # Utility functions and hooks
-│ ├── animations/ # GSAP animation configurations
-│ └── types/ # TypeScript types
-├── .eslintrc.json # ESLint

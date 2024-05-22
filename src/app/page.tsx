@@ -3,6 +3,7 @@ import ScrollUp from "@/components/Common/ScrollUp";
 import DigitalCollectibles from "@/components/Digital-Collectibles";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
+import CommunityPerks from "@/components/Perks";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <DigitalCollectibles />
       <Chronicles />
+      <CommunityPerks />
       <Features />
     </>
   );

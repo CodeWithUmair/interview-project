@@ -37,7 +37,7 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="max-w-8xl mx-auto flex flex-col items-center justify-between md:flex-row">
+              <div className="mx-auto flex max-w-6xl flex-col items-center justify-between md:flex-row">
                 {/* Mobile Image */}
                 <Image
                   src="/images/left-girl.png"

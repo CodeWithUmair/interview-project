@@ -1,7 +1,7 @@
-export default function DigitalCollectibles() {
+export default function CommunityPerks() {
   return (
     <section
-      id="digital"
+      id="perks"
       className="flex min-h-screen items-center justify-center bg-slate-950 pt-10"
     >
       <div className="container">

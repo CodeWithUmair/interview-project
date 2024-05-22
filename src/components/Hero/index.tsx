@@ -37,35 +37,35 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto flex max-w-6xl flex-col items-center justify-between md:flex-row">
+              <div className="mx-auto flex max-w-7xl flex-col items-center justify-between md:flex-row ">
                 {/* Mobile Image */}
                 <Image
                   src="/images/left-girl.png"
                   alt="Left Girl"
-                  width={320}
-                  height={450}
+                  width={280}
+                  height={300}
                   className="block md:hidden"
                 />
                 {/* Desktop IMage */}
                 <Image
                   src="/images/left-girl.png"
                   alt="Left Girl"
-                  width={340}
-                  height={480}
+                  width={280}
+                  height={300}
                   className="hidden md:block"
                 />
                 <Image
                   src="/images/center-girl.png"
                   alt="Left Girl"
-                  width={680}
-                  height={800}
+                  width={480}
+                  height={600}
                   className="mb-7 md:mb-0"
                 />
                 <Image
                   src="/images/right-girl.png"
                   alt="Left Girl"
-                  width={340}
-                  height={480}
+                  width={280}
+                  height={300}
                   className="hidden md:block"
                 />
                 {/* Mobile Image */}
@@ -73,8 +73,8 @@ const Hero = () => {
                 <Image
                   src="/images/right-girl.png"
                   alt="Left Girl"
-                  width={320}
-                  height={450}
+                  width={280}
+                  height={300}
                   className="block md:hidden"
                 />
               </div>

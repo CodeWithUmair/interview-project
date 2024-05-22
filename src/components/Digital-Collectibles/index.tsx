@@ -7,7 +7,7 @@ export default function DigitalCollectibles() {
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="mx-auto flex min-h-[600px] max-w-4xl flex-col items-center justify-evenly text-center">
+            <div className="mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center gap-5 text-center">
               <h3 className="mb-5 w-fit border-b-4 border-[#7E1C29] text-2xl font-bold leading-tight text-white ">
                 DIGITAL COLLECTIBLES
               </h3>

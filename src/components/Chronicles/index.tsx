@@ -13,7 +13,7 @@ export default function Chronicles() {
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="max-w-8xl x-5 relative flex items-center justify-between rounded-2xl bg-gradient-to-tl from-slate-400/30 to-stone-400/30 p-5">
+            <div className="x-5 relative mx-auto flex max-w-6xl items-center justify-between rounded-2xl bg-gradient-to-tl from-slate-400/30 to-stone-400/30 p-5">
               <div className="leading-0 flex w-[45%] items-center justify-center">
                 <Image
                   src={"/images/center-girl.png"}

@@ -15,18 +15,31 @@ const Header = () => {
 
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
-  const handleStickyNavbar = () => {
-    if (window.scrollY >= 80) {
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollTop = window.scrollY;
+    if (currentScrollTop > lastScrollTop) {
+      setScrollDirection("down");
+    } else {
+      setScrollDirection("up");
+    }
+    setLastScrollTop(currentScrollTop);
+
+    if (currentScrollTop >= 80) {
       setSticky(true);
     } else {
       setSticky(false);
     }
   };
-  useEffect(() => {
-    window.addEventListener("scroll", handleStickyNavbar);
-  });
 
-  // submenu handler
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop]);
+
+  // Submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
   const handleSubmenu = (index) => {
     if (openIndex === index) {
@@ -41,7 +54,13 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header left-0 top-0 z-40 flex w-full items-center py-2 ${
+        className={`header left-0 top-0 z-40 flex w-full items-center py-2 transition-transform duration-300 ${
+          sticky
+            ? scrollDirection === "down"
+              ? "-translate-y-full"
+              : "translate-y-0"
+            : "absolute bg-transparent"
+        } ${
           sticky
             ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
             : "absolute bg-transparent"
@@ -160,12 +179,6 @@ const Header = () => {
               </div>
             </div>
             <div className="flex items-center justify-end pr-16 lg:pr-0">
-              {/* <Link
-                href="/signin"
-                className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
-              >
-                Sign In
-              </Link> */}
               <Link
                 href="/signup"
                 className="ease-in-up hidden w-64 rounded-sm border border-[#ECD200] bg-primary px-2 py-6 text-center text-xs font-medium text-[#ECD200] shadow-[7px_7px_0px_0px_rgba(236,210,0)] transition duration-300 hover:border-[#ffffff] hover:bg-opacity-90 hover:shadow-btn-hover md:px-9 lg:block lg:px-5 xl:px-2"

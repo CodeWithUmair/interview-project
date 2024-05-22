@@ -69,14 +69,14 @@ export default function Chronicles() {
                 </Link>
               </div>
               <div
-                className="absolute left-20 top-20 h-[300px] w-[300px] bg-[#ECD300] opacity-20 "
+                className="absolute left-20 top-20 bg-[#ECD300] opacity-20 lg:h-[300px] lg:w-[300px] "
                 style={{
                   transform: "matrix(0.8, 0.6, -0.6, 0.8, 0, 0)",
                   filter: "blur(50px)",
                 }}
               ></div>
               <div
-                className="absolute -bottom-10 -right-10 h-[200px] w-[200px] bg-[#ECD200] opacity-20 "
+                className="absolute -bottom-10 -right-10 bg-[#ECD200] opacity-20 lg:h-[200px] lg:w-[200px] "
                 style={{
                   transform: "matrix(0.8, 0.6, -0.6, 0.8, 0, 0)",
                   filter: "blur(50px)",

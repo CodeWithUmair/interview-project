@@ -4,6 +4,7 @@ import DigitalCollectibles from "@/components/Digital-Collectibles";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import CommunityPerks from "@/components/Perks";
+import SidebarSocial from "@/components/SidebarSocial";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function Home() {
       <Chronicles />
       <CommunityPerks />
       <Features />
+      {/* <SidebarSocial /> */}
     </>
   );
 }

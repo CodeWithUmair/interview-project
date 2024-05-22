@@ -16,6 +16,7 @@ const Header = () => {
   };
 
   const headerRef = useRef();
+  const headerSlideRef = useRef();
 
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
@@ -59,9 +60,26 @@ const Header = () => {
     gsap.fromTo(
       headerRef.current,
       {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: 2,
+      },
+    );
+  }, []);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      headerSlideRef.current,
+      {
+        opacity: 0,
         x: "-100%",
       },
       {
+        opacity: 1,
         x: "0%",
         duration: 0.4,
         ease: "power2.out",
@@ -86,7 +104,7 @@ const Header = () => {
             : "absolute bg-transparent"
         }`}
       >
-        <div className="container">
+        <div ref={headerSlideRef} className="container">
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-72 max-w-full">
               <Link

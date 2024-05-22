@@ -2,9 +2,9 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import ThreeeCards from "./threeCards";
 
 const Hero = () => {
   const heroRef = useRef();
@@ -63,52 +63,9 @@ const Hero = () => {
 
         <div className="my-10"></div>
 
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="UM_Fade_In mx-auto flex max-w-7xl flex-col items-center justify-between lg:flex-row ">
-                {/* Mobile Image */}
-                <Image
-                  src="/images/left-girl.png"
-                  alt="Left Girl"
-                  width={280}
-                  height={300}
-                  className="block md:hidden"
-                />
-                {/* Desktop IMage */}
-                <Image
-                  src="/images/left-girl.png"
-                  alt="Left Girl"
-                  width={280}
-                  height={300}
-                  className="hidden md:block"
-                />
-                <Image
-                  src="/images/center-girl.png"
-                  alt="Left Girl"
-                  width={480}
-                  height={600}
-                  className="mb-7 lg:mb-0"
-                />
-                <Image
-                  src="/images/right-girl.png"
-                  alt="Left Girl"
-                  width={280}
-                  height={300}
-                  className="hidden md:block"
-                />
-                {/* Mobile Image */}
-
-                <Image
-                  src="/images/right-girl.png"
-                  alt="Left Girl"
-                  width={280}
-                  height={300}
-                  className="block md:hidden"
-                />
-              </div>
-            </div>
-          </div>
+        {/* I like Code Splitting, Better for everyone to read my code 😊 */}
+        <div className="UM_Fade_In">
+          <ThreeeCards />
         </div>
       </section>
     </>

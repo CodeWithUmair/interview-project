@@ -1,21 +1,50 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 const Hero = () => {
+  const heroRef = useRef();
+
+  useGSAP(() => {
+    gsap.from("#home", {
+      scale: 1.3,
+      duration: 3,
+      ease: "power2.out",
+    });
+  });
+
+  useGSAP(
+    () => {
+      gsap.from(".UM_Fade_In", {
+        opacity: 0,
+        duration: 3,
+        stagger: 0.4,
+        ease: "power2.out",
+        delay: 2, // Start the fade-in after the zoom-out effect
+      });
+    },
+    { scope: heroRef },
+  );
+
   return (
     <>
       <section
         id="home"
+        ref={heroRef}
         className="relative z-10 overflow-hidden bg-white bg-[url('/images/home-bg.png')] bg-cover bg-center bg-no-repeat pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
         <div className="container">
           <div className="-mx-4 mt-10 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-4xl text-center xl:max-w-6xl">
-                <h1 className="mb-5 text-2xl font-bold leading-tight text-black dark:text-[#ECD200] sm:leading-tight md:text-3xl md:leading-tight xl:text-5xl">
+              <div className="UM_Fade_In mx-auto max-w-4xl text-center xl:max-w-6xl">
+                <h1 className=" mb-5 text-2xl font-bold leading-tight text-black dark:text-[#ECD200] sm:leading-tight md:text-3xl md:leading-tight xl:text-5xl">
                   DIGITAL COLLECTIBLES FOR THE CREATOR ECONOMY
                 </h1>
-                <p className="mx-auto mb-12 max-w-xl text-sm !leading-relaxed text-body-color dark:text-body-color-dark md:text-base">
+                <p className=" mx-auto mb-12 max-w-xl text-sm !leading-relaxed text-body-color dark:text-body-color-dark md:text-base">
                   Discover Superheroine Era, join The League and gain prime
                   access to exclusive launch information and giveaways.
                 </p>
@@ -37,7 +66,7 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto flex max-w-7xl flex-col items-center justify-between lg:flex-row ">
+              <div className="UM_Fade_In mx-auto flex max-w-7xl flex-col items-center justify-between lg:flex-row ">
                 {/* Mobile Image */}
                 <Image
                   src="/images/left-girl.png"

@@ -2,9 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Header = () => {
   // Navbar toggle
@@ -12,6 +14,8 @@ const Header = () => {
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
+
+  const headerRef = useRef();
 
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
@@ -51,9 +55,25 @@ const Header = () => {
 
   const usePathName = usePathname();
 
+  useGSAP(() => {
+    gsap.fromTo(
+      headerRef.current,
+      {
+        x: "-100%",
+      },
+      {
+        x: "0%",
+        duration: 0.4,
+        ease: "power2.out",
+        delay: 2,
+      },
+    );
+  }, []);
+
   return (
     <>
       <header
+        ref={headerRef}
         className={`header left-0 top-0 z-40 flex w-full items-center py-2 transition-transform duration-300 ${
           sticky
             ? scrollDirection === "down"

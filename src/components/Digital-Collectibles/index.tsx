@@ -37,11 +37,10 @@ export default function DigitalCollectibles() {
 
   return (
     <section
-      ref={digitalRef}
       id="Digital-Collectibles"
       className={`flex min-h-screen items-center justify-center bg-slate-950 pt-10`}
     >
-      <div className="container">
+      <div className="container" ref={digitalRef}>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center gap-5 text-center">

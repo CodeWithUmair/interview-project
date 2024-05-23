@@ -44,11 +44,10 @@ export default function Chronicles() {
 
   return (
     <section
-      ref={chroniclesRef}
       id="Chronicles"
       className={`flex min-h-screen items-center justify-center bg-slate-950 py-10`}
     >
-      <div className="container">
+      <div className="container" ref={chroniclesRef}>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className=" relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-10 rounded-2xl bg-gradient-to-tl from-slate-400/30 to-stone-400/30 p-5 lg:flex-row lg:gap-0 2xl:max-w-7xl">

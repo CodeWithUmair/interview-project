@@ -11,7 +11,7 @@ Welcome to the NFT Collectible Animated Project! This project showcases a stunni
 
 ## Demo
 
-Check out the live demo of the project [here]([https://your-demo-link.com](https://superheroine.vercel.app/)).
+Check out the live demo of the project [here](https://superheroine.vercel.app/).
 
 ## Getting Started
 

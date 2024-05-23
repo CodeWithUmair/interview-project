@@ -69,7 +69,7 @@ export default function Chronicles() {
               </div>
               <div className="flex w-full flex-col items-start justify-center gap-4 lg:w-[55%] 2xl:gap-5">
                 <Image
-                  src={"/images/yellow.png"}
+                  src={"/images/Yellow.png"}
                   alt="Superheroine Image"
                   width={350}
                   height={30}

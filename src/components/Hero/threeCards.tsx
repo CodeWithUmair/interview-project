@@ -4,23 +4,36 @@ import Image from "next/image";
 import React, { useRef } from "react";
 
 export default function ThreeeCards() {
-  // useGSAP(() => {
-  //   gsap.from("#home", {
-  //     scale: 1.3,
-  //     duration: 3,
-  //     ease: "power2.out",
-  //   });
-  // });
+  // const leftRef = useRef();
+  // const rightRef = useRef();
 
   // useGSAP(() => {
-  //   gsap.from(".UM_Fade_In", {
-  //     opacity: 0,
-  //     duration: 3,
-  //     stagger: 0.4,
-  //     ease: "power2.out",
-  //     delay: 2, // Start the fade-in after the zoom-out effect
-  //   });
-  // });
+  //   gsap.fromTo(
+  //     leftRef.current,
+  //     {
+  //       x: "-100%",
+  //     },
+  //     {
+  //       x: "0%",
+  //       duration: 2,
+  //       ease: "power2.out",
+  //       delay: 2,
+  //     },
+  //   );
+
+  //   gsap.fromTo(
+  //     rightRef.current,
+  //     {
+  //       x: "+100%",
+  //     },
+  //     {
+  //       x: "0%",
+  //       duration: 2,
+  //       ease: "power2.out",
+  //       delay: 2,
+  //     },
+  //   );
+  // }, []);
 
   return (
     <div className="container">
@@ -29,6 +42,7 @@ export default function ThreeeCards() {
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between lg:flex-row ">
             {/* Mobile Image */}
             <Image
+              // ref={leftRef}
               src="/images/left-girl.png"
               alt="Left Girl"
               width={280}
@@ -37,6 +51,7 @@ export default function ThreeeCards() {
             />
             {/* Desktop IMage */}
             <Image
+              // ref={leftRef}
               src="/images/left-girl.png"
               alt="Left Girl"
               width={280}
@@ -51,6 +66,7 @@ export default function ThreeeCards() {
               className="mb-7 lg:mb-0"
             />
             <Image
+              // ref={rightRef}
               src="/images/right-girl.png"
               alt="Right Girl"
               width={280}
@@ -60,6 +76,7 @@ export default function ThreeeCards() {
             {/* Mobile Image */}
 
             <Image
+              // ref={rightRef}
               src="/images/right-girl.png"
               alt="Right Girl"
               width={280}

@@ -218,7 +218,7 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-end pr-16 lg:pr-0">
               <Link
-                href="/signup"
+                href="/"
                 className="ease-in-up hidden w-64 rounded-sm border border-[#ECD200] bg-primary px-2 py-6 text-center text-xs font-medium text-[#ECD200] shadow-[7px_7px_0px_0px_rgba(236,210,0)] transition duration-300 hover:border-[#ffffff] hover:bg-opacity-90 hover:shadow-btn-hover md:px-9 lg:block lg:px-5 xl:px-2"
               >
                 EXCLUSIVE MINT COMING SOON

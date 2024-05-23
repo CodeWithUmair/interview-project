@@ -3,7 +3,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useRef } from "react";
 
-export default function ThreeeCards() {
+export default function ThreeCards() {
   // const leftRef = useRef();
   // const rightRef = useRef();
 

@@ -1,39 +1,63 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
-import { useRef } from "react";
 import ThreeeCards from "./threeCards";
 
 const Hero = () => {
-  const heroRef = useRef();
+  const heroRef = useRef(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useGSAP(() => {
-    gsap.from("#home", {
-      scale: 1.3,
-      duration: 3,
-      ease: "power2.out",
-    });
-  });
+    const triggerAnimation = () => {
+      gsap.fromTo(
+        "#home",
+        { scale: 1.3 },
+        { scale: 1, duration: 3, ease: "power2.out" },
+      );
 
-  useGSAP(
-    () => {
-      gsap.from(".UM_Fade_In", {
-        opacity: 0,
-        duration: 3,
-        stagger: 0.4,
-        ease: "power2.out",
-        delay: 2, // Start the fade-in after the zoom-out effect
+      gsap.fromTo(
+        ".UM_Fade_In",
+        { opacity: 0 },
+        { opacity: 1, duration: 3, stagger: 0.4, ease: "power2.out", delay: 2 },
+      );
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          triggerAnimation();
+        }
       });
-    },
-    { scope: heroRef },
-  );
+    };
+
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: "0px",
+      threshold: 0.1, // trigger when 10% of the section is visible
+    };
+
+    observerRef.current = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+    if (heroRef.current) {
+      observerRef.current.observe(heroRef.current);
+    }
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <>
       <section
-        id="home"
+        id="Home"
         ref={heroRef}
         className="relative z-10 overflow-hidden bg-white bg-[url('/images/home-bg.png')] bg-cover bg-center bg-no-repeat pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
